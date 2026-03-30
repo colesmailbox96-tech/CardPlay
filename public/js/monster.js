@@ -123,20 +123,8 @@ const MonsterManager = {
       return null;
     });
 
-    // Process attacks (collect results)
-    const attacks = [];
-    this.monsters.forEach(m => {
-      if (m.dead) return;
-      const dist = Utils.distance(m.x, m.y, Player.x, Player.y);
-      if (dist <= m.attackRange && m.state === 'attack') {
-        m.attackCooldown -= 0; // already handled above
-      }
-    });
-
     // Remove fully dead monsters
     this.monsters = this.monsters.filter(m => !(m.dead && m.deathTimer > 0.5));
-
-    return attacks;
   },
 
   trySpawn() {

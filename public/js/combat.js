@@ -38,7 +38,6 @@ const Combat = {
     const dist = Utils.distance(monster.x, monster.y, Player.x, Player.y);
     if (dist > monster.attackRange) return;
 
-    monster.attackCooldown -= 0;
     if (monster.attackCooldown > 0) return;
     monster.attackCooldown = monster.attackSpeed;
 
