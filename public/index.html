@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>CardPlay - Pixel RPG</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- HUD overlay -->
+    <div id="hud">
+      <div id="hud-top">
+        <div id="player-info">
+          <div id="player-name">Hero <span id="player-level">Lv.1</span></div>
+          <div id="hp-bar-container">
+            <div id="hp-bar"></div>
+            <span id="hp-text">100/100</span>
+          </div>
+          <div id="xp-bar-container">
+            <div id="xp-bar"></div>
+            <span id="xp-text">0/100</span>
+          </div>
+        </div>
+        <div id="gold-display">
+          <span id="gold-icon">💰</span>
+          <span id="gold-amount">0</span>
+        </div>
+      </div>
+
+      <div id="hud-bottom">
+        <div id="joystick-zone"></div>
+        <div id="action-buttons">
+          <button id="btn-attack" class="action-btn">⚔️</button>
+          <button id="btn-inventory" class="action-btn">🎒</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory Modal -->
+    <div id="inventory-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>🎒 Inventory</h2>
+          <button class="close-btn" id="close-inventory">✕</button>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="all">All</button>
+          <button class="tab-btn" data-tab="cards">Cards</button>
+          <button class="tab-btn" data-tab="weapons">Weapons</button>
+          <button class="tab-btn" data-tab="potions">Potions</button>
+          <button class="tab-btn" data-tab="materials">Materials</button>
+        </div>
+        <div id="inventory-grid" class="inventory-grid"></div>
+        <div id="item-detail" class="item-detail hidden"></div>
+      </div>
+    </div>
+
+    <!-- Card Pack Opening Modal -->
+    <div id="card-pack-modal" class="modal hidden">
+      <div class="card-pack-content">
+        <div id="pack-opening-stage" class="pack-stage">
+          <div id="card-pack-visual" class="card-pack-visual">
+            <div class="pack-glow"></div>
+            <div class="pack-image"></div>
+          </div>
+          <p id="pack-instruction">Tap the pack to open!</p>
+        </div>
+        <div id="card-reveal-stage" class="pack-stage hidden">
+          <div id="revealed-cards" class="revealed-cards"></div>
+          <button id="collect-cards-btn" class="collect-btn">Collect All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Damage numbers container -->
+    <div id="damage-numbers"></div>
+
+    <!-- Notification area -->
+    <div id="notifications"></div>
+
+    <!-- Death screen -->
+    <div id="death-screen" class="modal hidden">
+      <div class="death-content">
+        <h1>💀 You Died</h1>
+        <p>Your adventure has ended... for now.</p>
+        <button id="respawn-btn" class="action-btn large">Respawn</button>
+      </div>
+    </div>
+
+    <!-- Level up notification -->
+    <div id="level-up-modal" class="modal hidden">
+      <div class="level-up-content">
+        <h1>⬆️ Level Up!</h1>
+        <p id="level-up-text">You reached level 2!</p>
+        <div id="level-up-stats"></div>
+        <button id="level-up-ok" class="action-btn large">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/loot.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/monster.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/cardpack.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
