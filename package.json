@@ -1,0 +1,13 @@
+{
+  "name": "cardplay-rpg",
+  "version": "1.0.0",
+  "description": "A pixel RPG with card pack drops",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["rpg", "pixel", "game", "cards"],
+  "author": "CardPlay",
+  "license": "MIT"
+}
