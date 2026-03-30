@@ -438,6 +438,7 @@ html, body {
   border-radius: 12px;
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
 }
 
 .card-pack-visual.shaking {
@@ -464,6 +465,7 @@ html, body {
 
 .pack-image {
   font-size: 64px;
+  pointer-events: none;
 }
 
 #pack-instruction {
